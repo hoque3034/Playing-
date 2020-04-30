@@ -1,0 +1,59 @@
+#include<stdio.h> 
+#include<stdlib.h> 
+
+  
+int main() 
+{ 
+    //char str[] = "12abc12"; 
+    char digit1;
+    char digit2;
+    char ch;
+    int x , y;
+    int total = 0;
+    printf("First digit:");
+    scanf("%c",&digit1); 
+    scanf("%c");
+    printf("Second digit:");
+    scanf("%c",&digit2); 
+    
+    //printf ("1= %c, 2 = %c", digit1, digit2);
+    
+    if (((isdigit(digit1) == 0) && (isdigit(digit2) == 0))) {
+        digit1 = '\0';
+        digit2 = '\0';
+        printf("Enter First digit again:");
+        scanf("%*c,%c",&digit1); 
+        scanf("%c",&digit1);
+        
+        printf("Enter Second digit again:");
+        scanf("%*c,%c",&digit2); 
+        scanf("%c",&digit2);
+        //printf ("\n\n 1= %c, 2 = %c", digit1, digit2);
+      
+    }
+    else if (((isdigit(digit1) == 0) && (isdigit(digit2) != 0))) {
+        printf("Enter First digit again:");
+        digit1 = '\0';
+        scanf("%*c,%c",&digit1); 
+        scanf("%c",&digit1); 
+        //printf ("\n\n 1= %c, 2 = %c", digit1, digit2);
+    }
+    else if (((isdigit(digit1) != 0) && (isdigit(digit2) == 0))) {
+        printf("Enter Second digit again:");
+        digit2 = '\0';
+        scanf("%*c,%c",&digit2); 
+        scanf("%c",&digit2); 
+       // printf ("\n\n 1= %c, 2 = %c", digit1, digit2);
+    }
+    
+    //printf ("%c, %c", digit1, digit2);
+    x = digit1 - '0';
+    y = digit2 - '0';
+    
+    total = (x + y);
+    printf("\Total=%d", total);
+    
+ 
+  
+    return 0; 
+} 
